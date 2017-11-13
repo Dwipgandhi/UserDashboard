@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .largeWidth{
+            color: red;
+        }
+        .smallWidth{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h2>Employee Details
+            <button type="button" ng-click="add()" class="btn btn-info" role="button">ADD EMPLOYEE</button>
+        </h2>
+        <div>
+            <input type="text" placeholder="Search" class="form-control" ng-model="enteredValue">
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>EMP ID</th>
+                    <th>GENDER</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>CITY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="result in myData | filter : enteredValue"
+                    ng-class="{largeWidth: result.gender == 'M', smallWidth: result.gender == 'F'}" >
+                    <td>{{result.id}}  </td>
+                    <td>{{result.gender}}</td>
+                    <td>{{result.name}}</td>
+                    <td>{{result.email}}</td>
+                    <td>{{result.city}}</td>
+                    <td>
+                        <button type="button" ng-click="editInput($index)" class="btn btn-danger">Edit</button>
+                        <button type="button" ng-click="removeInput($index)" class="btn btn-primary">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

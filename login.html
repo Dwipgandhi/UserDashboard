@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Employee Login</h2>
+    <p>The form below contains two input elements; one of type text and one of type email:</p>
+    <form>
+        <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" ng-model="new.name" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" ng-model="new.email" class="form-control" id="email">
+        </div>
+        <button type="button" class="btn btn-danger" ng-click="loginInput()">Sign In</button>
+    </form>
+</div>
